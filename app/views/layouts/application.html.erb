@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projekt 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/adds">
+        FlatRent
+      </a>
+    </div>
+    
+     <ul class="nav navbar-nav navbar-right">
+    
+      <% if admin_signed_in? %>
+          <li><%= link_to "Log out", destroy_admin_session_url, :method => 'delete' %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_admin_session_url%></li>
+      <%end%>
+     </ul>
+
+  </div>
+</nav>
+
+  <div class="container-fluid">
+  <div class="row">
+  	<div class="col-md-12">
+    <%= yield %> 
+  	</div>
+  </body>
+
+</html>

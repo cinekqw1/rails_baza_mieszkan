@@ -1,0 +1,29 @@
+<div class="col-md-3">
+  
+  <%=image_tag @add.image, class: "img-responsive"%>
+
+</div>
+
+<div class="col-md-9">
+  <div class="col-md-12">
+    <strong>Title: </strong>
+    <h4><%= @add.title %></h4>
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <strong>Price: </strong> <%= @add.price %>
+    
+    <hr>
+  </div>
+  <div class="col-md-6">
+    <strong>Adress: </strong>  <%= @add.address %>,<%= @add.city%>
+    
+    <hr>
+  </div>
+  <div class="col-md-12">
+    <strong>Description: </strong> <br>
+    <%= simple_format @add.description %>
+    <hr>
+  </div>
+  
+</div>

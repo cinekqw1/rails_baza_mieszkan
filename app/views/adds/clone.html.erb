@@ -1,0 +1,36 @@
+<h1>Clone</h1>
+
+<%= form_for @ad, url:'/adds', method: :post do |f |%>
+
+
+<div class="field">
+	<%= f.label :title %> 
+	<%= f.text_field :title %><br><br>
+
+
+<div class="field">
+	<%= f.label :description %> 
+	<%= f.text_area :description %><br><br>
+
+
+<div class="field">
+	<%= f.label :price %>
+	<%= f.text_field :price %><br><br>
+
+
+<div class="field">
+	<%= f.label :address %>
+	<%= f.text_field :address %><br><br>
+
+
+<div class="field">
+	<%= f.label :city %>
+	<%= f.text_field :city %><br><br>
+
+
+<div class="actions">
+	<%= f.submit "save"%>
+	
+</div>
+
+<% end %>
