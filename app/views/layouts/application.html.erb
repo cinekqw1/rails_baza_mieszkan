@@ -21,11 +21,16 @@
     </div>
     
      <ul class="nav navbar-nav navbar-right">
-    
+      
       <% if admin_signed_in? %>
-          <li><%= link_to "Log out", destroy_admin_session_url, :method => 'delete' %></li>
-        <% else %>
-          <li><%= link_to "Sign in", new_admin_session_url%></li>
+          <li><%= link_to "Log out admin", destroy_admin_session_url, :method => 'delete' %></li>
+        <% else if user_signed_in? %>
+          <li><%= link_to "Log out user", destroy_user_session_url, :method => 'delete' %>
+        <%else%>
+          <li><%= link_to "Sign in", new_user_session_url%></li>
+          <%end%>
+
+
       <%end%>
      </ul>
 

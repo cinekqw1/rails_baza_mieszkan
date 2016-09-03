@@ -4,6 +4,10 @@
           <li><%= link_to "New add", '/adds/new' , class: 'btn btn-success' %></li>
       <%end%>
 
+<% if user_signed_in? %>
+          <li><%= link_to "New add", '/adds/new' , class: 'btn btn-success' %></li>
+      <%end%>
+
 <center><h1>Ogłoszenia</h1></center>
 
 <% @adds.each do |f| %>
